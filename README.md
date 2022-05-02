@@ -1,4 +1,4 @@
 # Pokemon
  Repositorio de la actividad de Pokémon.
- Modificado por papi FranKii :)
+ Modificado por Francisco Tormos Martinez.
  Modificado por papi Alvaro ;)
