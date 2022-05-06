@@ -1,4 +1,5 @@
 package pokemon;
+import java.util.Random;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,16 +16,25 @@ public class Pokemon {
     private int velocidad;
     private int estamina;
     private int nivel;
+<<<<<<< HEAD
     private ArrayList<Movimiento> listaMovimientos;
+=======
+    private Movimiento[] listaMovimientos;
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
     private int experiencia;
     private int fertilidad;
     private EnumEstado estado;
     private EnumTipo tipo;
 
+<<<<<<< HEAD
     public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial, int defensa,
             int defensaEspecial,
             int velocidad, int estamina, int nivel, Movimiento[] listaMovimientos, int experiencia, EnumEstado estado,
             EnumTipo tipo) {
+=======
+    public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial, int defensa, int defensaEspecial,
+            int velocidad, int estamina, int nivel, Movimiento[] listaMovimientos, int experiencia, EnumEstado estado, EnumTipo tipo) {
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
         this.nombre = nombre;
         this.mote = mote;
         this.vitalidad = vitalidad;
@@ -35,7 +45,11 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.estamina = estamina;
         this.nivel = nivel;
+<<<<<<< HEAD
         this.listaMovimientos = new ArrayList<Movimiento>(4);
+=======
+        this.listaMovimientos = new Movimiento[4];
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
         this.experiencia = experiencia;
         this.fertilidad = 5;
         this.estado = estado;
@@ -78,7 +92,11 @@ public class Pokemon {
         return nivel;
     }
 
+<<<<<<< HEAD
     public ArrayList<Movimiento> getListaMovimientos() {
+=======
+    public Movimiento[] getListaMovimientos() {
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
         return listaMovimientos;
     }
 
@@ -113,7 +131,11 @@ public class Pokemon {
     public void setDefensa(int defensa) {
         this.defensa = defensa;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
     public void setDefensaEspecial(int defensaEspecial) {
         this.defensaEspecial = defensaEspecial;
     }
@@ -138,7 +160,11 @@ public class Pokemon {
         this.nivel = nivel;
     }
 
+<<<<<<< HEAD
     public void setListaMovimientos(ArrayList<Movimiento> listaMovimientos) {
+=======
+    public void setListaMovimientos(Movimiento[] listaMovimientos) {
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
         this.listaMovimientos = listaMovimientos;
     }
 
@@ -162,6 +188,7 @@ public class Pokemon {
         this.vitalidad = vitalidad;
     }
 
+<<<<<<< HEAD
     Random aleatorio = new Random();
 
     public boolean ganarExp(int xp) {
@@ -215,4 +242,28 @@ public class Pokemon {
 
     }
 
+=======
+    Random aleatorio= new Random();
+    public boolean ganarExp(int xp){
+        experiencia += xp;
+        if( experiencia >= nivel*10){
+            nivel++;
+
+            vitalidad += aleatorio.nextInt(1, 5)+1;
+            ataque += aleatorio.nextInt(1, 5)+1;
+            defensa += aleatorio.nextInt(1, 5)+1;
+            ataqueEspecial += aleatorio.nextInt(1, 5)+1;
+            defensaEspecial += aleatorio.nextInt(1, 5)+1;
+            velocidad += aleatorio.nextInt(1, 5)+1;
+        }
+        for(int i = 0; i <= 100; i+3){
+            
+        }
+        return false;
+    }
+
+    public boolean atacar(){
+
+    }
+>>>>>>> 3659a883517d1e1a0c870d1e620f857f9f3100a8
 }
