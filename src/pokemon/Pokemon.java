@@ -1,29 +1,43 @@
 package pokemon;
 
+import java.util.ArrayList;
+import java.util.Random;
+import pokemon.Movimiento;
+
 public class Pokemon {
     private String nombre;
     private String mote;
     private int vitalidad;
     private int ataque;
     private int ataqueEspecial;
+    private int defensa;
+    private int defensaEspecial;
     private int velocidad;
     private int estamina;
     private int nivel;
+    private ArrayList<Movimiento> listaMovimientos;
+    private int experiencia;
     private int fertilidad;
     private EnumEstado estado;
     private EnumTipo tipo;
 
-    public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial,
-            int velocidad, int estamina, int nivel, int fertilidad, EnumEstado estado, EnumTipo tipo) {
+    public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial, int defensa,
+            int defensaEspecial,
+            int velocidad, int estamina, int nivel, Movimiento[] listaMovimientos, int experiencia, EnumEstado estado,
+            EnumTipo tipo) {
         this.nombre = nombre;
         this.mote = mote;
         this.vitalidad = vitalidad;
         this.ataque = ataque;
         this.ataqueEspecial = ataqueEspecial;
+        this.defensa = defensa;
+        this.defensaEspecial = defensaEspecial;
         this.velocidad = velocidad;
         this.estamina = estamina;
         this.nivel = nivel;
-        this.fertilidad = fertilidad;
+        this.listaMovimientos = new ArrayList<Movimiento>(4);
+        this.experiencia = experiencia;
+        this.fertilidad = 5;
         this.estado = estado;
         this.tipo = tipo;
     }
@@ -34,6 +48,14 @@ public class Pokemon {
 
     public int getAtaqueEspecial() {
         return ataqueEspecial;
+    }
+
+    public int getDefensa() {
+        return defensa;
+    }
+
+    public int getDefensaEspecial() {
+        return defensaEspecial;
     }
 
     public EnumEstado getEstado() {
@@ -54,6 +76,14 @@ public class Pokemon {
 
     public int getNivel() {
         return nivel;
+    }
+
+    public ArrayList<Movimiento> getListaMovimientos() {
+        return listaMovimientos;
+    }
+
+    public int getExperiencia() {
+        return experiencia;
     }
 
     public String getNombre() {
@@ -80,6 +110,14 @@ public class Pokemon {
         this.ataqueEspecial = ataqueEspecial;
     }
 
+    public void setDefensa(int defensa) {
+        this.defensa = defensa;
+    }
+
+    public void setDefensaEspecial(int defensaEspecial) {
+        this.defensaEspecial = defensaEspecial;
+    }
+
     public void setEstado(EnumEstado estado) {
         this.estado = estado;
     }
@@ -100,6 +138,14 @@ public class Pokemon {
         this.nivel = nivel;
     }
 
+    public void setListaMovimientos(ArrayList<Movimiento> listaMovimientos) {
+        this.listaMovimientos = listaMovimientos;
+    }
+
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -115,4 +161,58 @@ public class Pokemon {
     public void setVitalidad(int vitalidad) {
         this.vitalidad = vitalidad;
     }
+
+    Random aleatorio = new Random();
+
+    public boolean ganarExp(int xp) {
+        experiencia += xp;
+        if (experiencia >= nivel * 10) {
+            nivel++;
+
+            vitalidad += aleatorio.nextInt(1, 5) + 1;
+            ataque += aleatorio.nextInt(1, 5) + 1;
+            defensa += aleatorio.nextInt(1, 5) + 1;
+            ataqueEspecial += aleatorio.nextInt(1, 5) + 1;
+            defensaEspecial += aleatorio.nextInt(1, 5) + 1;
+            velocidad += aleatorio.nextInt(1, 5) + 1;
+        }
+        aprenderAtaque("Pistol")
+        return true;
+
+    }
+
+    public float atacar(int ataque) { 
+        //HP= HP-((Potencia)*(Ventaja) + A-D)
+        float ventajaEficaz = 1.5f;
+        int ventajaNeutro = 1;
+        float ventajaPocoEficaz = 0.5f;
+        int vitalidadNueva;
+        if (vitalidad > 0 && ventajaEficaz == 1.5f) {
+            vitalidadNueva = vitalidad- ((potencia * 1.5)+ (ataqueEspecial - defensaEspecial))
+        } else if()
+        return vitalidadNueva;
+        if(vitalidad > 0 && ventajaEficaz == 1.5f){
+            
+        }
+        return vitalidad;
+
+    }
+
+    public boolean comprobarVentaja() {
+        if()
+        return false;
+
+    }
+
+    public String aprenderAtaque(String ataqueNuevo) {
+
+        return ataqueNuevo;
+
+    }
+
+    public int descansar() {
+        return ataque;
+
+    }
+
 }
