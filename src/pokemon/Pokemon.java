@@ -1,10 +1,10 @@
 package pokemon;
 
 import java.util.Random;
-
 import java.util.ArrayList;
-import java.util.Random;
-import pokemon.Movimiento;
+import pokemon.enumerados.EnumEstado;
+import pokemon.enumerados.EnumTipo;
+import pokemon.movimientos.Movimiento;
 
 public class Pokemon {
     private String nombre;
@@ -159,7 +159,7 @@ public class Pokemon {
     public void setVitalidad(int vitalidad) {
         this.vitalidad = vitalidad;
     }
-    Random aleatorio=new Random();
+    Random aleatorio = new Random();
     public boolean ganarExp(int xp) {
         experiencia += xp;
         if (experiencia >= nivel * 10) {

@@ -1,8 +1,8 @@
-package pokemon;
+package pokemon.movimientos;
 
 import java.util.ArrayList;
 
-public class Movimiento {
+public abstract class Movimiento {
     private ArrayList<Movimiento> movimientos;
     protected int potencia;
 
