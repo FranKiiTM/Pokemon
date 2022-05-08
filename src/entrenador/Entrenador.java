@@ -19,11 +19,9 @@ public class Entrenador {
         this.nombre = nombre;
         this.pokedollares = aleatorio.nextInt(800, 1000)+800;
         this.equipo = equipo.size(4);
-        this.cajaPokemon = new Pokemon[10];
+        this.cajaPokemon = cajaPokemon.size(10);
         this.objetos = objetos;
     }
-
-    
 
     public ArrayList<Pokemon> getCajaPokemon() {
         return cajaPokemon;
@@ -96,6 +94,5 @@ public class Entrenador {
     public boolean capturar(){
 
     }
-
-    
+ 
 }
