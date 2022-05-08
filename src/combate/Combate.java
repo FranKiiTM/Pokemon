@@ -1,6 +1,7 @@
 package combate;
 
 import entrenador.Entrenador;
+import turno.Turno;
 
 public class Combate {
     
@@ -8,16 +9,16 @@ public class Combate {
     private Entrenador entrenadorRival;
     private Turno turnoCombate;
     private Entrenador ganador;
-    private int numPokemonKoJugador;
-    private int numPokemonKoRival;
+    private int pkmnKoJugador;
+    private int pkmnKoRival;
 
-    public Combate(Entrenador paramJugador, Entrenador paramEntrenadorRival, Entrenador paramGanador, int ParamNumPokemonKoJugador, int ParamNumPokemonKoRival ){
-        this.jugador= paramJugador;
-        this.entrenadorRival= paramEntrenadorRival;
-        this.turnoCombate = 1;
-        this.ganador= paramGanador;
-        this.numPokemonKoJugador = ParamNumPokemonKoJugador;
-        this.numPokemonKoRival = ParamNumPokemonKoRival;
+    public Combate(Entrenador jugador, Entrenador entrenadorRival, Turno turnoCombate, Entrenador ganador, int numPokemonKoJugador, int numPokemonKoRival ){
+        this.jugador= jugador;
+        this.entrenadorRival= entrenadorRival;
+        this.turnoCombate = turnoCombate;
+        this.ganador= ganador;
+        this.pkmnKoJugador = numPokemonKoJugador;
+        this.pkmnKoRival = numPokemonKoRival;
     }
 
     public Entrenador getEntrenadorRival() {
@@ -32,12 +33,12 @@ public class Combate {
         return jugador;
     }
 
-    public int getNumPokemonKoJugador() {
-        return numPokemonKoJugador;
+    public int getPkmnKoJugador() {
+        return pkmnKoJugador;
     }
 
-    public int getNumPokemonKoRival() {
-        return numPokemonKoRival;
+    public int getPkmnKoRival() {
+        return pkmnKoRival;
     }
 
     public Turno getTurnoCombate() {
@@ -56,26 +57,30 @@ public class Combate {
         this.jugador = jugador;
     }
 
-    public void setNumPokemonKoJugador(int numPokemonKoJugador) {
-        this.numPokemonKoJugador = numPokemonKoJugador;
+    public void setPkmnKoJugador(int pkmnKoJugador) {
+        this.pkmnKoJugador = pkmnKoJugador;
     }
 
-    public void setNumPokemonKoRival(int numPokemonKoRival) {
-        this.numPokemonKoRival = numPokemonKoRival;
+    public void setPkmnKoRival(int pkmnKoRival) {
+        this.pkmnKoRival = pkmnKoRival;
     }
 
     public void setTurnoCombate(Turno turnoCombate) {
         this.turnoCombate = turnoCombate;
     }
     
-
-    public int perderPokedollares(){
+    public void ganarPerderPokedollares(){
         int pokedollaresGanados = 0;
+        int pokedollaresRestantes = 0;
         if (jugador == ganador){
-            pokedollaresGanados = pokedollares*0.33;
+            pokedollaresGanados = (int) (jugador.getPokedollares()*0.33);
+            System.out.println("Has ganado, recibes "+pokedollaresGanados+" pokedollares");
         }
         else if (entrenadorRival == ganador){
-            pokedollaresGanados = pokedollares*0.33;
+            pokedollaresGanados = (int) (jugador.getPokedollares()*0.33);
+            pokedollaresRestantes-=pokedollaresGanados;
+            System.out.println("Has perdido, pierdes "+pokedollaresGanados+" pokedollares");
+            System.out.println("Te quedan "+pokedollaresRestantes+" pokedollares");
         }
     }
 
@@ -83,25 +88,31 @@ public class Combate {
         if(retirada == true){
             System.out.println("Te retiras de la batalla...");
             entrenadorRival = ganador;
-            perderPokedollares();
+            ganarPerderPokedollares();
         }
-        else if(retirada ==false){
+        else if(retirada == false){
             System.out.println("Sigue luchando");
         }
     }
 
     public void combatir(){
-        for(int i=0; i<turnoCombate; i++){
-            if(numPokemonKoJugador == 4 ){
-                entrenadorRival=ganador;
-            }
-            else if(numPokemonKoRival == 4){
-                jugador=ganador;
-            //TODO: Añadir mas tarde el metodo subir de nivel
-            }
-            else {
-                retirarse(true);
-            }
+        int numTurno=1;
+    
+        do {
+            numTurno++;
+        } while (pkmnKoJugador<4 || pkmnKoRival<4);
+        
+        if(pkmnKoJugador == 4 ){
+            entrenadorRival=ganador;
+            ganarPerderPokedollares();
+        }
+        else if(pkmnKoRival == 4){
+            jugador=ganador;
+            ganarPerderPokedollares();
+        //TODO: Añadir mas tarde el metodo subir de nivel
+        }
+        else {
+            retirarse(true);
         }
     }
 }
