@@ -192,8 +192,7 @@ public class Pokemon implements IMecanicaCaptura {
         // HP= HP-((Potencia)*(Ventaja) + A-D)
 
         float ventaja = comprobarVentaja(pokemonRival);
-        if ((vitalidad
-                - (listaMovimientos.get(ataque).getPotencia() * ventaja + (ataqueEspecial - defensaEspecial))) > 0) {
+        if ((vitalidad - (listaMovimientos.get(ataque).getPotencia() * ventaja + (ataqueEspecial - defensaEspecial))) > 0) {
             pokemonRival.setVitalidad((int) (vitalidad
                     - (listaMovimientos.get(ataque).getPotencia() * ventaja + (ataqueEspecial - defensaEspecial))));
         } else {
@@ -369,7 +368,7 @@ public class Pokemon implements IMecanicaCaptura {
     public void aprenderAtaque(ArrayList<Movimiento> lMovimientos) {
         if (nivel % 3 != 0) {
         } else {
-            
+
         }
     }
 
