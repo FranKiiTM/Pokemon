@@ -3,6 +3,7 @@ package movimiento;
 import pokemon.EnumTipo;
 
 public abstract class Movimiento {
+
     private EnumTipo tipoMovimiento;
     private String nombreMov;
     protected int costeEstamina;
