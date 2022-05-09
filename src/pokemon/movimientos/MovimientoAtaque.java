@@ -1,12 +1,22 @@
 package pokemon.movimientos;
 
-import java.util.ArrayList;
+import pokemon.enumerados.EnumTipo;
 
-public class  MovimientoAtaque extends Movimiento{
+public class MovimientoAtaque extends Movimiento {
 
-    public MovimientoAtaque(ArrayList<Movimiento> movimientos, int potencia) {
-        super(movimientos, potencia);
-        //TODO Auto-generated constructor stub
+    private int potenciaAtaque;
+
+    public MovimientoAtaque(EnumTipo tipoMovimiento, String nombreMov, int costeEstamina, int potenciaAtaque) {
+        super(tipoMovimiento, nombreMov, costeEstamina, movimientos, potenciaAtaque);
+        this.potenciaAtaque = potenciaAtaque;
     }
-    
+
+    @Override
+    public void gastoEstamina() {
+        costeEstamina = potenciaAtaque / 2;
+    }
+
+    public void ataque() {
+    }
+
 }

@@ -26,10 +26,9 @@ public class Pokemon implements IMecanicaCaptura {
     private int vitalidadMax;
     private int estaminaMax;
 
-    public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial, int defensa,
-            int defensaEspecial,
-            int velocidad, int estamina, int nivel, ArrayList<Movimiento> listaMovimientos, int experiencia,
-            EnumEstado estado, EnumTipo tipo, int vitalidadMax, int estaminaMax) {
+    public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial, int defensa,int defensaEspecial,
+            int velocidad, int estamina, int nivel, ArrayList<Movimiento> listaMovimientos, int experiencia,EnumEstado estado, 
+            EnumTipo tipo, int vitalidadMax, int estaminaMax) {
         this.nombre = nombre;
         this.mote = mote;
         this.vitalidad = vitalidad;
@@ -367,15 +366,15 @@ public class Pokemon implements IMecanicaCaptura {
 
     }
 
-    public void aprenderAtaque(String ataqueNuevo) {
+    public void aprenderAtaque(ArrayList<Movimiento> lMovimientos) {
         if (nivel % 3 != 0) {
         } else {
-
+            
         }
     }
 
     public int descansar() {
-        int estaminatotal;
+        int estaminatotal = 0;
         estaminatotal = estaminaMax;
         return estaminatotal;
     }
