@@ -23,11 +23,11 @@ public class Turno {
     }
 
     public void accionEntrenador() {
-        System.out.println("Entrenador " + turnoEntrenador.getNombre()+": "+turnoPokemon.getNombre()+" usa "+); //TODO: añadir movimiento
+        System.out.println("Entrenador " + turnoEntrenador.getNombre()+": "+turnoPokemon.getNombre()+" usa "); //TODO: añadir movimiento
     }
 
     public void accionRival() {
-        System.out.println("Entrenador rival" + turnoRival.getNombre()+": "+turnoPokemon.getNombre()+" usa "+); //TODO: añadir movimiento
+        System.out.println("Entrenador rival" + turnoRival.getNombre()+": "+turnoPokemon.getNombre()+" usa "); //TODO: añadir movimiento
     }
 
 }
