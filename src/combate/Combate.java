@@ -99,6 +99,9 @@ public class Combate {
         int numTurno=1;
     
         do {
+            System.out.println("Turno "+numTurno);
+            turnoCombate.accionEntrenador();
+            turnoCombate.accionRival();
             numTurno++;
         } while (pkmnKoJugador<4 || pkmnKoRival<4);
         
@@ -109,6 +112,7 @@ public class Combate {
         else if(pkmnKoRival == 4){
             jugador=ganador;
             ganarPerderPokedollares();
+            
         //TODO: Añadir mas tarde el metodo subir de nivel
         }
         else {
