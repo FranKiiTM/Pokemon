@@ -15,9 +15,5 @@ public class MovimientoAtaque extends Movimiento{
     public int gastoEstamina() {       
     return costeEstamina = potenciaAtaque / 2;        
     }
-
-    public void ataque(){
-        //TODO: preguntar vitalidad a paco
-    }
     
 }
