@@ -7,7 +7,6 @@ public class Main {
         Pokemon p = new Pokemon();
 
         p.getEstamina();
-        p.atacar(5);
         p.getEstado();
     }
 }
