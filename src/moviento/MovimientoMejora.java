@@ -19,7 +19,6 @@ public class MovimientoMejora extends Movimiento {
     @Override
     public int gastoEstamina() {
         return costeEstamina = turnosMejora * 10;
-        // TODO: Pregunta a paco estamina
     }
 
     public void subirDefEsp() {

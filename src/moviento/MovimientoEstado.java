@@ -19,7 +19,6 @@ public class MovimientoEstado extends Movimiento{
     @Override
     public int gastoEstamina() {
         return costeEstamina = turnosEstado * 10;
-        //TODO: Pregunta a paco estamina
     }
 
     public void ataqueEstado(){

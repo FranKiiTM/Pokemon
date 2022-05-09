@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import pokemon.Pokemon;
-import combate.Combate;
 
 public class Entrenador {
 
     private String nombre;
     private int pokedollares;
-    private ArrayList <Pokemon> equipo;
-    private ArrayList <Pokemon> cajaPokemon;
+    private ArrayList<Pokemon> equipo;
+    private ArrayList<Pokemon> cajaPokemon;
     private int objetos;
 
-    Random aleatorio= new Random();
-    public Entrenador(String nombre, int objetos){
+    Random aleatorio = new Random();
+
+    public Entrenador(String nombre, int objetos) {
         this.nombre = nombre;
-        this.pokedollares = aleatorio.nextInt(800, 1000)+800;
-        this.equipo = equipo.size(4);
-        this.cajaPokemon = cajaPokemon.size(10);
+        this.pokedollares = aleatorio.nextInt(800, 1000) + 800;
+        this.equipo = new ArrayList<>(4);
+        this.cajaPokemon = new ArrayList<>(10);
         this.objetos = objetos;
     }
 
@@ -62,37 +62,38 @@ public class Entrenador {
     public void setPokedollares(int pokedollares) {
         this.pokedollares = pokedollares;
     }
-    
 
-    public boolean moverACaja(){
-        if(equipo.size(4))
-        for(int i = 0; i<equipo.length; i++){
-            if(equipo[i] != null){
-                System.out.println("Moviendo pokemon a caja...");
-                cajaPokemon[i]=equipo[i];
-            }
-            else if(equipo[i] == null){
-                return false;
-            }
-        }   
-        return true;
-    }
-
-    public boolean moverAEquipo(){
-        for(int i = 0; i<cajaPokemon.length; i++){
-            if(cajaPokemon[i] >= cajaPokemon[]  ){
-                System.out.println("Moviendo pokemon a equipo principal...");
-                equipo[i]=cajaPokemon[i];
-            }
-            else if(cajaPokemon[i] == null){
-                return false;
-            }
+    public void moverACaja(Pokemon pokemon) {
+        if (equipo.size() >= 1) {
+            System.out.println("Moviendo pokemon a caja...");
+            cajaPokemon.add(pokemon);
+        } else {
+            System.out.println("Error, debes tener minimo un Pokemon en tu equipo principal");
         }
-        return true;
     }
 
-    public boolean capturar(){
-
+    public void moverAEquipo(Pokemon pokemon) {
+        if (equipo.size() != 4) {
+            System.out.println("Moviendo pokemon a equipo principal...");
+            equipo.add(pokemon);
+        } else {
+            System.out.println("Error, tienes ya 4 Pokemons en tu equipo principal");
+        }
     }
- 
+
+    Random random = new Random();
+
+    public void capturar() {
+
+        Pokemon pokemoncito = new Pokemon(); // TODO: añadir caracteristicas de cada pokemon de forma aleatoria mas adelante con bases de datos
+        
+        int comprobador = random.nextInt(3) + 1;
+
+        if (comprobador == 1 || comprobador == 2) {
+            System.out.println("Capturado!!");
+        } else if (comprobador == 3) {
+            System.out.println("El pokemon ha escapado de la pokeball");
+        }
+    }
+
 }

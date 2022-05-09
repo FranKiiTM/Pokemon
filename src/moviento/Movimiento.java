@@ -14,10 +14,29 @@ public abstract class Movimiento {
         this.costeEstamina = costeEstamina;
     }
 
-    public abstract int gastoEstamina();
-
+    public String getNombreMov() {
+        return nombreMov;
+    }
+    public EnumTipo getTipoMovimiento() {
+        return tipoMovimiento;
+    }
     public int getCosteEstamina() {
         return costeEstamina;
     }
+    
+    public void setCosteEstamina(int costeEstamina) {
+        this.costeEstamina = costeEstamina;
+    }
+
+    public void setNombreMov(String nombreMov) {
+        this.nombreMov = nombreMov;
+    }
+
+    public void setTipoMovimiento(EnumTipo tipoMovimiento) {
+        this.tipoMovimiento = tipoMovimiento;
+    }
+
+    public abstract int gastoEstamina();
+
 }
 
