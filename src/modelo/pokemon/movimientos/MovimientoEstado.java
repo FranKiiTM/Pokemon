@@ -1,11 +1,11 @@
-package pokemon.movimientos;
+package modelo.pokemon.movimientos;
 
 import java.util.Random;
 
-import pokemon.enumerados.EnumEstado;
-import pokemon.enumerados.EnumTipo;
+import modelo.pokemon.enumerados.EnumEstado;
+import modelo.pokemon.enumerados.EnumTipo;
 
-public class MovimientoEstado extends Movimiento{
+public class MovimientoEstado extends Movimiento {
 
     Random random = new Random();
 
@@ -27,5 +27,5 @@ public class MovimientoEstado extends Movimiento{
     public void ataqueEstado() {
         System.out.println(estadoMovimiento + " durante " + turnosEstado + " turnos");
     }
-    
+
 }

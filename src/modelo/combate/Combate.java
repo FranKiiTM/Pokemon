@@ -1,10 +1,10 @@
-package combate;
+package modelo.combate;
 
-import entrenador.Entrenador;
+import modelo.entrenador.Entrenador;
 import turno.Turno;
 
 public class Combate {
-    
+
     private Entrenador jugador;
     private Entrenador entrenadorRival;
     private Turno turnoCombate;
@@ -12,11 +12,12 @@ public class Combate {
     private int pkmnKoJugador;
     private int pkmnKoRival;
 
-    public Combate(Entrenador jugador, Entrenador entrenadorRival, Turno turnoCombate, Entrenador ganador, int numPokemonKoJugador, int numPokemonKoRival ){
-        this.jugador= jugador;
-        this.entrenadorRival= entrenadorRival;
+    public Combate(Entrenador jugador, Entrenador entrenadorRival, Turno turnoCombate, Entrenador ganador,
+            int numPokemonKoJugador, int numPokemonKoRival) {
+        this.jugador = jugador;
+        this.entrenadorRival = entrenadorRival;
         this.turnoCombate = turnoCombate;
-        this.ganador= ganador;
+        this.ganador = ganador;
         this.pkmnKoJugador = numPokemonKoJugador;
         this.pkmnKoRival = numPokemonKoRival;
     }
@@ -44,11 +45,11 @@ public class Combate {
     public Turno getTurnoCombate() {
         return turnoCombate;
     }
-    
+
     public void setEntrenadorRival(Entrenador entrenadorRival) {
         this.entrenadorRival = entrenadorRival;
     }
-    
+
     public void setGanador(Entrenador ganador) {
         this.ganador = ganador;
     }
@@ -68,54 +69,50 @@ public class Combate {
     public void setTurnoCombate(Turno turnoCombate) {
         this.turnoCombate = turnoCombate;
     }
-    
-    public void ganarPerderPokedollares(){
+
+    public void ganarPerderPokedollares() {
         int pokedollaresGanados = 0;
         int pokedollaresRestantes = 0;
-        if (jugador == ganador){
-            pokedollaresGanados = (int) (jugador.getPokedollares()*0.33);
-            System.out.println("Has ganado, recibes "+pokedollaresGanados+" pokedollares");
-        }
-        else if (entrenadorRival == ganador){
-            pokedollaresGanados = (int) (jugador.getPokedollares()*0.33);
-            pokedollaresRestantes-=pokedollaresGanados;
-            System.out.println("Has perdido, pierdes "+pokedollaresGanados+" pokedollares");
-            System.out.println("Te quedan "+pokedollaresRestantes+" pokedollares");
+        if (jugador == ganador) {
+            pokedollaresGanados = (int) (jugador.getPokedollares() * 0.33);
+            System.out.println("Has ganado, recibes " + pokedollaresGanados + " pokedollares");
+        } else if (entrenadorRival == ganador) {
+            pokedollaresGanados = (int) (jugador.getPokedollares() * 0.33);
+            pokedollaresRestantes -= pokedollaresGanados;
+            System.out.println("Has perdido, pierdes " + pokedollaresGanados + " pokedollares");
+            System.out.println("Te quedan " + pokedollaresRestantes + " pokedollares");
         }
     }
 
-    public void retirarse(boolean retirada){
-        if(retirada == true){
+    public void retirarse(boolean retirada) {
+        if (retirada == true) {
             System.out.println("Te retiras de la batalla...");
             entrenadorRival = ganador;
             ganarPerderPokedollares();
-        }
-        else if(retirada == false){
+        } else if (retirada == false) {
             System.out.println("Sigue luchando");
         }
     }
 
-    public void combatir(){
-        int numTurno=1;
-    
+    public void combatir() {
+        int numTurno = 1;
+
         do {
-            System.out.println("Turno "+numTurno);
+            System.out.println("Turno " + numTurno);
             turnoCombate.accionEntrenador();
             turnoCombate.accionRival();
             numTurno++;
-        } while (pkmnKoJugador<4 || pkmnKoRival<4);
-        
-        if(pkmnKoJugador == 4 ){
-            entrenadorRival=ganador;
+        } while (pkmnKoJugador < 4 || pkmnKoRival < 4);
+
+        if (pkmnKoJugador == 4) {
+            entrenadorRival = ganador;
             ganarPerderPokedollares();
-        }
-        else if(pkmnKoRival == 4){
-            jugador=ganador;
+        } else if (pkmnKoRival == 4) {
+            jugador = ganador;
             ganarPerderPokedollares();
-            
-        //TODO: Añadir mas tarde el metodo subir de nivel
-        }
-        else {
+
+            // TODO: Añadir mas tarde el metodo subir de nivel
+        } else {
             retirarse(true);
         }
     }

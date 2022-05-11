@@ -1,6 +1,6 @@
-package pokemon.movimientos;
+package modelo.pokemon.movimientos;
 
-import pokemon.enumerados.EnumTipo;
+import modelo.pokemon.enumerados.EnumTipo;
 
 public class MovimientoAtaque extends Movimiento {
 

@@ -1,8 +1,9 @@
-package pokemon.movimientos;
+package modelo.pokemon.movimientos;
 
-import pokemon.enumerados.EnumTipo;
-import pokemon.Pokemon;
 import java.util.Random;
+
+import modelo.pokemon.Pokemon;
+import modelo.pokemon.enumerados.EnumTipo;
 
 public class MovimientoMejora extends Movimiento {
     Random random = new Random();
@@ -77,5 +78,5 @@ public class MovimientoMejora extends Movimiento {
         System.out.println("El ataque del rival disminuyó durante " + turnosMejora + "turnos");
         System.out.println(mejora.getAtaque() + " + " + random + " = " + disminuirAtaque);
     }
-    
+
 }

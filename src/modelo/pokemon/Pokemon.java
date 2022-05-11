@@ -1,13 +1,12 @@
-package pokemon;
+package modelo.pokemon;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-import pokemon.enumerados.EnumEstado;
-import pokemon.enumerados.EnumTipo;
-import pokemon.movimientos.Movimiento;
+import modelo.pokemon.enumerados.EnumEstado;
+import modelo.pokemon.enumerados.EnumTipo;
+import modelo.pokemon.movimientos.Movimiento;
 
-public class Pokemon implements IMecanicaCaptura {
+public class Pokemon {
     private String nombre;
     private String mote;
     private int vitalidad;
@@ -381,31 +380,31 @@ public class Pokemon implements IMecanicaCaptura {
         return estaminatotal;
     }
 
-    @Override
-    public void generarPokemon() {
-        Random r = new Random();
-        Pokemon p = new Pokemon();
-        p.setVitalidad(r.nextInt(10) + 1);
-        p.setAtaque(r.nextInt(5) + 1);
-        p.setAtaqueEspecial(r.nextInt(5) + 1);
-        p.setDefensa(r.nextInt(5) + 1);
-        p.setDefensaEspecial(r.nextInt(5) + 1);
-        p.setDefensaEspecial(r.nextInt(5) + 1);
-        p.setVelocidad(r.nextInt(5) + 1);
-        p.setEstamina(r.nextInt(10) + 1);
-        p.setFertilidad(5);
-        p.setNivel(1);
-    }
+    // @Override
+    // public void generarPokemon() {
+    // Random r = new Random();
+    // Pokemon p = new Pokemon();
+    // p.setVitalidad(r.nextInt(10) + 1);
+    // p.setAtaque(r.nextInt(5) + 1);
+    // p.setAtaqueEspecial(r.nextInt(5) + 1);
+    // p.setDefensa(r.nextInt(5) + 1);
+    // p.setDefensaEspecial(r.nextInt(5) + 1);
+    // p.setDefensaEspecial(r.nextInt(5) + 1);
+    // p.setVelocidad(r.nextInt(5) + 1);
+    // p.setEstamina(r.nextInt(10) + 1);
+    // p.setFertilidad(5);
+    // p.setNivel(1);
+    // }
 
-    @Override
-    public boolean capturarPokemon() {
-        Random ra = new Random();
-        int nAleatorio = ra.nextInt(4);
-        if (nAleatorio == 3) {
-            return false;
-        } else {
-            generarPokemon();
-            return true;
-        }
-    }
+    // @Override
+    // public boolean capturarPokemon() {
+    // Random ra = new Random();
+    // int nAleatorio = ra.nextInt(4);
+    // if (nAleatorio == 3) {
+    // return false;
+    // } else {
+    // generarPokemon();
+    // return true;
+    // }
+    // }
 }

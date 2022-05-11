@@ -1,4 +1,4 @@
-package pokemon.enumerados;
+package modelo.pokemon.enumerados;
 
 public enum EnumEstado {
     PARALIZADO,

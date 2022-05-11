@@ -1,6 +1,6 @@
-package pokemon.enumerados;
+package modelo.pokemon.enumerados;
 
-public  enum Mejora {
+public enum Mejora {
     ATAQUE_FISICO,
     ATAQUE_ESPECIAL,
     DEFENSA_FISICA,
