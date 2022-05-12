@@ -1,4 +1,4 @@
-package pokemon;
+package modelo.pokemon;
 
 import java.util.Random;
 import java.util.ArrayList;

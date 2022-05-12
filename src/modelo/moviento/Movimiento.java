@@ -1,6 +1,6 @@
-package moviento;
+package modelo.moviento;
 
-import pokemon.EnumTipo;
+import modelo.pokemon.EnumTipo;
 
 public abstract class Movimiento {
 

@@ -1,4 +1,4 @@
-package turno;
+package modelo.turno;
 
 import entrenador.Entrenador;
 import pokemon.Pokemon;

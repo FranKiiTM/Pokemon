@@ -1,8 +1,9 @@
-package moviento;
+package modelo.moviento;
 
-import pokemon.EnumTipo;
-import pokemon.Pokemon;
 import java.util.Random;
+
+import modelo.pokemon.EnumTipo;
+import modelo.pokemon.Pokemon;
 
 public class MovimientoMejora extends Movimiento {
     Random random = new Random();

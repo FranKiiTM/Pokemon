@@ -1,9 +1,9 @@
-package entrenador;
+package modelo.entrenador;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import pokemon.Pokemon;
+import modelo.pokemon.Pokemon;
 
 public class Entrenador {
 
