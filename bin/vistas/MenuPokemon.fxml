@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.MenuController">
   <children>
     <MenuBar prefHeight="90.0" prefWidth="785.0" VBox.vgrow="NEVER">
       <menus>
@@ -84,16 +84,16 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="501.0" prefWidth="670.0" styleClass="body" stylesheets="@../Documents/GitHub/Pokemon/src/vistas/HojaEstiloss.css" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="fondoMenu" maxHeight="-1.0" maxWidth="-1.0" prefHeight="501.0" prefWidth="670.0" styleClass="body" stylesheets="@../Documents/GitHub/Pokemon/src/vistas/HojaEstiloss.css" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="358.0" fitWidth="336.0" layoutX="-7.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgnGengar" fitHeight="358.0" fitWidth="336.0" layoutX="-7.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Downloads/gifGengar.gif" />
+                  <Image url="@Cosas%20Pokemon/gifGengar.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="158.0" fitWidth="375.0" layoutX="244.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgnTitulo" fitHeight="158.0" fitWidth="375.0" layoutX="244.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Downloads/PokemonAlvaroFrankii.png" />
+                  <Image url="@Cosas%20Pokemon/PokemonAlvaroFrankii.png" />
                </image>
             </ImageView>
             <Button fx:id="btnCapturar" layoutX="382.0" layoutY="272.0" mnemonicParsing="false" onAction="#capturar" prefHeight="43.0" prefWidth="144.0" text="Capturar">
