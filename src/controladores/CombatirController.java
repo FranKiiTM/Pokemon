@@ -12,16 +12,19 @@ import javafx.scene.layout.AnchorPane;
 public class CombatirController implements Initializable {
 
     @FXML
-    private Button btnCom;
+    private Button btnPokemon;
 
     @FXML
     private Button btnCombatir;
 
     @FXML
-    private AnchorPane fondoMenu;
+    private Button btnHuir;
 
     @FXML
-    private ImageView imgnGengar;
+    private ImageView imgFondoCombate;
+
+    @FXML
+    private AnchorPane NCHOR;
 
     @FXML
 
