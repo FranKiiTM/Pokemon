@@ -1,7 +1,7 @@
 package modelo.combate;
 
 import modelo.entrenador.Entrenador;
-import turno.Turno;
+import modelo.turno.Turno;
 
 public class Combate {
 
