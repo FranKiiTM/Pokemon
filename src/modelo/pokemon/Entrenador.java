@@ -1,9 +1,7 @@
-package modelo.entrenador;
+package modelo.pokemon;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import modelo.pokemon.Pokemon;
 
 public class Entrenador {
 
@@ -85,13 +83,14 @@ public class Entrenador {
 
     public void capturar() {
 
-        Pokemon pokemoncito = new Pokemon(); // TODO: añadir caracteristicas de cada pokemon de forma aleatoria mas
-                                             // adelante con bases de datos
-
+        Pokemon pokemoncito = new Pokemon(); // TODO: añadir caracteristicas de cada pokemon de forma aleatoria mas adelante con bases de datos
+        
         int comprobador = random.nextInt(3) + 1;
 
         if (comprobador == 1 || comprobador == 2) {
             System.out.println("Capturado!!");
+            moverACaja(pokemoncito);
+            moverAEquipo(pokemoncito);
         } else if (comprobador == 3) {
             System.out.println("El pokemon ha escapado de la pokeball");
         }

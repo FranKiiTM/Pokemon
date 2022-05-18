@@ -1,4 +1,4 @@
-package modelo.pokemon.enumerados;
+package modelo.pokemon;
 
 public enum EnumTipo {
     AGUA,
@@ -7,5 +7,4 @@ public enum EnumTipo {
     VOLADOR,
     ELECTRICO,
     TIERRA,
-    BICHO,
 }

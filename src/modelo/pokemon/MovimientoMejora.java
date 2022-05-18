@@ -1,9 +1,6 @@
-package modelo.pokemon.movimientos;
+package modelo.pokemon;
 
 import java.util.Random;
-
-import modelo.pokemon.Pokemon;
-import modelo.pokemon.enumerados.EnumTipo;
 
 public class MovimientoMejora extends Movimiento {
     Random random = new Random();
@@ -12,15 +9,14 @@ public class MovimientoMejora extends Movimiento {
     private Pokemon mejora;
 
     public MovimientoMejora(EnumTipo tipoMovimiento, String nombreMov, int costeEstamina, Pokemon mejora) {
-        super(tipoMovimiento, nombreMov, costeEstamina, movimientos, costeEstamina);
-        this.turnosMejora = random.nextInt(3) + 1;
+        super(tipoMovimiento, nombreMov, costeEstamina);
+        this.turnosMejora = random.nextInt(3)+1;
         this.mejora = mejora;
     }
 
     @Override
-    public void gastoEstamina() {
-        costeEstamina = turnosMejora * 10;
-        // TODO: Pregunta a paco estamina
+    public int gastoEstamina() {
+        return costeEstamina = turnosMejora * 10;
     }
 
     public void subirDefEsp() {
