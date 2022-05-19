@@ -9,16 +9,14 @@ public class Entrenador {
     private int pokedollares;
     private ArrayList<Pokemon> equipo;
     private ArrayList<Pokemon> cajaPokemon;
-    private int objetos;
 
     Random aleatorio = new Random();
 
-    public Entrenador(String nombre, int objetos) {
+    public Entrenador(String nombre) {
         this.nombre = nombre;
         this.pokedollares = aleatorio.nextInt(800, 1000) + 800;
         this.equipo = new ArrayList<>(4);
         this.cajaPokemon = new ArrayList<>(10);
-        this.objetos = objetos;
     }
 
     public ArrayList<Pokemon> getCajaPokemon() {
@@ -31,10 +29,6 @@ public class Entrenador {
 
     public String getNombre() {
         return nombre;
-    }
-
-    public int getObjetos() {
-        return objetos;
     }
 
     public int getPokedollares() {
@@ -53,10 +47,6 @@ public class Entrenador {
         this.nombre = nombre;
     }
 
-    public void setObjetos(int objetos) {
-        this.objetos = objetos;
-    }
-
     public void setPokedollares(int pokedollares) {
         this.pokedollares = pokedollares;
     }
@@ -65,17 +55,20 @@ public class Entrenador {
         if (equipo.size() >= 1) {
             System.out.println("Moviendo pokemon a caja...");
             cajaPokemon.add(pokemon);
+            equipo.remove(pokemon);
         } else {
             System.out.println("Error, debes tener minimo un Pokemon en tu equipo principal");
         }
     }
 
     public void moverAEquipo(Pokemon pokemon) {
-        if (equipo.size() != 4) {
+        if (equipo.size() < 4) {
             System.out.println("Moviendo pokemon a equipo principal...");
             equipo.add(pokemon);
+            cajaPokemon.remove(pokemon);
         } else {
             System.out.println("Error, tienes ya 4 Pokemons en tu equipo principal");
+            moverACaja(pokemon);
         }
     }
 
@@ -89,11 +82,9 @@ public class Entrenador {
 
         if (comprobador == 1 || comprobador == 2) {
             System.out.println("Capturado!!");
-            moverACaja(pokemoncito);
             moverAEquipo(pokemoncito);
         } else if (comprobador == 3) {
             System.out.println("El pokemon ha escapado de la pokeball");
         }
     }
-
 }
