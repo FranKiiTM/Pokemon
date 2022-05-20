@@ -1,11 +1,6 @@
 package modelo.pokemon;
 
 import java.util.Random;
-import java.util.ArrayList;
-import modelo.pokemon.EnumEstado;
-import modelo.pokemon.EnumTipo;
-import modelo.pokemon.Movimiento;
-import modelo.pokemon.*;
 
 public class Pokemon {
     private String nombre;
@@ -185,15 +180,17 @@ public class Pokemon {
         float ventajaEficaz = 1.5f;
         int ventajaNeutro = 1;
         float ventajaPocoEficaz = 0.5f;
-        int vitalidadNueva;
+        int vitalidadNueva = 0;
         if (vitalidad > 0 && ventajaEficaz == 1.5f) {
-            vitalidadNueva = (int) ( vitalidad- (( MovimientoAtaque.getPotenciaAtaque() * 1.5)+ (ataqueEspecial - defensaEspecial)))
+            vitalidadNueva =  (int) (vitalidad- (( MovimientoAtaque.getPotenciaAtaque() * 1.5)+ (ataqueEspecial - defensaEspecial)));
+        }else if(vitalidad > 0 && ventajaNeutro == 1) {
+            vitalidadNueva = (int) (vitalidad
+                    - ((MovimientoAtaque.getPotenciaAtaque() * 1.5) + (ataqueEspecial - defensaEspecial)));
+        }else if (vitalidad > 0 && ventajaPocoEficaz == 0.5f) {
+            vitalidadNueva = (int) (vitalidad
+                    - ((MovimientoAtaque.getPotenciaAtaque() * 1.5) + (ataqueEspecial - defensaEspecial)));
         }
         return vitalidadNueva;
-        if(vitalidad > 0 && ventajaEficaz == 1.5f){
-            
-        }
-        return vitalidad;
 
     }
 
