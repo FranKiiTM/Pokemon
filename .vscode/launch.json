@@ -16,7 +16,7 @@
             "request": "launch",
             "mainClass": "modelo.main.Main",
             "projectName": "Pokemon-3_94ccaf66",
-            "vmArgs": "--module-path=C:/Users/TURNO-MAÑANA/Downloads/openjfx-18.0.1_windows-x64_bin-sdk/javafx-sdk-18.0.1/lib --add-modules=javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path\"C:\\Users\\holas\\Downloads\\openjfx-18.0.1_windows-x64_bin-sdk\\javafx-sdk-18.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
