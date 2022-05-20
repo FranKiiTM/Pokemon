@@ -78,7 +78,7 @@ public class Entrenador {
         Pokemon charmander = new Pokemon("Charmander", "Jose Juan", 39, 52, 60, 43, 50, 65, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.FUEGO);
         Pokemon squirtle = new Pokemon("Squirtle", "Mbappe", 44, 48, 50, 65, 64, 43, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.AGUA);
         Pokemon phanpy = new Pokemon("Phanpy", "Francis", 90, 60, 40, 60, 40, 40, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.TIERRA);
-        Pokemon caterpie = new Pokemon("Caterpie", "Gusanito", 45, 30, 20, 35, 20, 45, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.BICHO);
+        Pokemon vulpix = new Pokemon("Vulpix", "Agallas", 38, 41, 50, 40, 65, 65, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.FUEGO);
         Pokemon spearow = new Pokemon("Spearow", "Pajarico", 40, 60, 31, 30, 31, 70, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.VOLADOR);
         Pokemon pikachu = new Pokemon("Pikachu", "Pika pika", 35, 55, 50, 40, 50, 90, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.ELECTRICO);
         Pokemon sandshrew = new Pokemon("Sandshrew", "Bobito", 50, 75, 20, 85, 30, 40, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.TIERRA);
@@ -118,7 +118,7 @@ public class Entrenador {
         if (pokeRandom==4){
             if (comprobador == 1 || comprobador == 2) {
                 System.out.println("Caterpie capturado!!");
-                moverAEquipo(caterpie);
+                moverAEquipo(vulpix);
             } else if (comprobador == 3) {
                 System.out.println("Caterpie ha escapado de la pokeball");
             }

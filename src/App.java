@@ -40,11 +40,11 @@ public class App {
         MovimientoAtaque m3Phanpy = new MovimientoAtaque(EnumTipo.TIERRA, "Terremoto", 5, 100);
         MovimientoAtaque m4Phanpy = new MovimientoAtaque(EnumTipo.TIERRA, "Tierra viva", 5, 90);
 
-        Pokemon caterpie = new Pokemon("Caterpie", "Gusanito", 45, 30, 20, 35, 20, 45, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.BICHO);
-        MovimientoAtaque m1Caterpie = new MovimientoAtaque(EnumTipo.AGUA, "Burbuja", 5, 40);
-        MovimientoAtaque m2Caterpie = new MovimientoAtaque(EnumTipo.BICHO, "Electrotela", 5, 55);
-        MovimientoAtaque m3Caterpie = new MovimientoAtaque(EnumTipo.BICHO, "Picadura", 5, 90);
-        MovimientoAtaque m4Caterpie = new MovimientoAtaque(EnumTipo.AGUA, "Hidropulso", 5, 60);
+        Pokemon vulpix = new Pokemon("Vulpix", "Agallas", 38, 41, 50, 40, 65, 65, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.FUEGO);
+        MovimientoAtaque m1Vulpix = new MovimientoAtaque(EnumTipo.FUEGO, "Lanzallamas", 5, 90);
+        MovimientoAtaque m2Vulpix = new MovimientoAtaque(EnumTipo.FUEGO, "Ascuas", 5, 40);
+        MovimientoAtaque m3Vulpix = new MovimientoAtaque(EnumTipo.BICHO, "Excavar", 5, 80);
+        MovimientoAtaque m4Vulpix = new MovimientoAtaque(EnumTipo.AGUA, "Llamarada", 5, 110);
 
         Pokemon spearow = new Pokemon("Spearow", "Pajarico", 40, 60, 31, 30, 31, 70, 100, 1, 10, EnumEstado.SIN_ESTADO, EnumTipo.VOLADOR);
         MovimientoAtaque m1Spearow = new MovimientoAtaque(EnumTipo.VOLADOR, "Pìcotazo", 5, 35);

@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
+<<<<<<< HEAD
     "java.project.referencedLibraries": {
         "include": [
             "lib/**/*.jar"
@@ -9,4 +10,27 @@
             "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.swing.jar"
         ]
     }
+=======
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.base.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.controls.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.fxml.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.graphics.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.media.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.swing.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx.web.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
+        "c:\\Users\\TURNO-MAÑANA\\Desktop\\mysql-connector-java-8.0.27.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.base.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.controls.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.media.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.swing.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx.web.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
+        "c:\\Users\\Usuario\\Desktop\\CosasPokemon\\mysql-connector-java-8.0.27.jar"
+    ]
+>>>>>>> 7942d401e974747d4216cc0da6a2432b1a495b5b
 }
