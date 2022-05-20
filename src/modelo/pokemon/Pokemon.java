@@ -17,14 +17,14 @@ public class Pokemon {
     private int velocidad;
     private int estamina;
     private int nivel;
-    private ArrayList<Movimiento> listaMovimientos;
+    //private ArrayList<Movimiento> listaMovimientos;
     private int experiencia;
     private int fertilidad;
     private EnumEstado estado;
     private EnumTipo tipo;
 
     public Pokemon(String nombre, String mote, int vitalidad, int ataque, int ataqueEspecial, int defensa, int defensaEspecial,
-            int velocidad, int estamina, int nivel, ArrayList<Movimiento> listaMovimientos, int experiencia, EnumEstado estado, EnumTipo tipo) {
+            int velocidad, int estamina, int nivel /*ArrayList<Movimiento> listaMovimientos*/, int experiencia, EnumEstado estado, EnumTipo tipo) {
         this.nombre = nombre;
         this.mote = mote;
         this.vitalidad = vitalidad;
@@ -35,7 +35,7 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.estamina = estamina;
         this.nivel = nivel;
-        this.listaMovimientos = new ArrayList<Movimiento>(4);
+        //this.listaMovimientos = new ArrayList<Movimiento>(4);
         this.experiencia = experiencia;
         this.fertilidad = 5;
         this.estado = estado;
