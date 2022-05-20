@@ -2,11 +2,11 @@ package modelo.pokemon;
 
 public class MovimientoAtaque extends Movimiento{
 
-    private int potenciaAtaque;
+    private static int potenciaAtaque;
 
     public MovimientoAtaque(EnumTipo tipoMovimiento, String nombreMov, int costeEstamina, int potenciaAtaque) {
         super(tipoMovimiento, nombreMov, costeEstamina);
-        this.potenciaAtaque = potenciaAtaque;
+        MovimientoAtaque.potenciaAtaque = potenciaAtaque;
     }
 
     @Override
@@ -14,6 +14,9 @@ public class MovimientoAtaque extends Movimiento{
     return costeEstamina = potenciaAtaque / 2;        
     }
 
+    public static int getPotenciaAtaque() {
+        return potenciaAtaque;
+    }
     public void ataque(){
         //TODO: preguntar vitalidad a paco
     }

@@ -2,9 +2,10 @@ package modelo.pokemon;
 
 import java.util.Random;
 import java.util.ArrayList;
-import pokemon.enumerados.EnumEstado;
-import pokemon.enumerados.EnumTipo;
-import pokemon.movimientos.Movimiento;
+import modelo.pokemon.EnumEstado;
+import modelo.pokemon.EnumTipo;
+import modelo.pokemon.Movimiento;
+import modelo.pokemon.*;
 
 public class Pokemon {
     private String nombre;
@@ -81,9 +82,9 @@ public class Pokemon {
         return nivel;
     }
 
-    public ArrayList<Movimiento> getListaMovimientos() {
-        return listaMovimientos;
-    }
+    // public ArrayList<Movimiento> getListaMovimientos() {
+    //     return listaMovimientos;
+    // }
 
     public int getExperiencia() {
         return experiencia;
@@ -139,9 +140,9 @@ public class Pokemon {
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-    public void setListaMovimientos(ArrayList<Movimiento> listaMovimientos) {
-        this.listaMovimientos = listaMovimientos;
-    }
+    // public void setListaMovimientos(ArrayList<Movimiento> listaMovimientos) {
+    //     this.listaMovimientos = listaMovimientos;
+    // }
 
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
@@ -186,8 +187,8 @@ public class Pokemon {
         float ventajaPocoEficaz = 0.5f;
         int vitalidadNueva;
         if (vitalidad > 0 && ventajaEficaz == 1.5f) {
-            vitalidadNueva = vitalidad- ((potencia * 1.5)+ (ataqueEspecial - defensaEspecial))
-        } else if()
+            vitalidadNueva = (int) ( vitalidad- (( MovimientoAtaque.getPotenciaAtaque() * 1.5)+ (ataqueEspecial - defensaEspecial)))
+        }
         return vitalidadNueva;
         if(vitalidad > 0 && ventajaEficaz == 1.5f){
             
@@ -196,9 +197,163 @@ public class Pokemon {
 
     }
 
-    public boolean comprobarVentaja() {
-        if()
-        return false;
+    public float comprobarVentaja(Pokemon pokemon) {
+        float ventaja;
+        if (this.getTipo() == EnumTipo.AGUA && pokemon.getTipo() == EnumTipo.FUEGO) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.AGUA && pokemon.getTipo() == EnumTipo.TIERRA) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.FUEGO && pokemon.getTipo() == EnumTipo.PLANTA) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.FUEGO && pokemon.getTipo() == EnumTipo.BICHO) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.PLANTA && pokemon.getTipo() == EnumTipo.AGUA) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.PLANTA && pokemon.getTipo() == EnumTipo.TIERRA) {
+
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.BICHO && pokemon.getTipo() == EnumTipo.PLANTA) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.VOLADOR && pokemon.getTipo() == EnumTipo.PLANTA) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.VOLADOR && pokemon.getTipo() == EnumTipo.BICHO) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.ELECTRICO && pokemon.getTipo() == EnumTipo.AGUA) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.TIERRA && pokemon.getTipo() == EnumTipo.ELECTRICO) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.TIERRA && pokemon.getTipo() == EnumTipo.FUEGO) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.TIERRA && pokemon.getTipo() == EnumTipo.FUEGO) {
+            ventaja = 1.5f;
+            System.out.println("Tienes ventaja!");
+        }
+
+        else if (this.getTipo() == EnumTipo.AGUA && pokemon.getTipo() == EnumTipo.VOLADOR
+                || pokemon.getTipo() == EnumTipo.BICHO) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else if (this.getTipo() == EnumTipo.FUEGO && pokemon.getTipo() == EnumTipo.ELECTRICO
+                || pokemon.getTipo() == EnumTipo.TIERRA || pokemon.getTipo() == EnumTipo.VOLADOR) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else if (this.getTipo() == EnumTipo.PLANTA && pokemon.getTipo() == EnumTipo.ELECTRICO) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else if (this.getTipo() == EnumTipo.BICHO && pokemon.getTipo() == EnumTipo.AGUA
+                || pokemon.getTipo() == EnumTipo.BICHO || pokemon.getTipo() == EnumTipo.ELECTRICO
+                || pokemon.getTipo() == EnumTipo.TIERRA) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else if (this.getTipo() == EnumTipo.ELECTRICO && pokemon.getTipo() == EnumTipo.BICHO
+                || pokemon.getTipo() == EnumTipo.ELECTRICO || pokemon.getTipo() == EnumTipo.FUEGO) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else if (this.getTipo() == EnumTipo.VOLADOR && pokemon.getTipo() == EnumTipo.AGUA
+                || pokemon.getTipo() == EnumTipo.FUEGO || pokemon.getTipo() == EnumTipo.TIERRA
+                || pokemon.getTipo() == EnumTipo.VOLADOR) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else if (this.getTipo() == EnumTipo.TIERRA && pokemon.getTipo() == EnumTipo.AGUA
+                || pokemon.getTipo() == EnumTipo.TIERRA) {
+            ventaja = 1f;
+            System.out.println("Neutro");
+        }
+
+        else {
+            ventaja = 0.5f;
+            System.out.println("Tu rival tiene ventaja.");
+        }
+        return ventaja;
+
+    }
+
+    public boolean subirNivel() {
+        if (this.experiencia < (this.nivel * 10)) {
+            return false;
+        } else {
+            System.out.println("!Tu Pokemon ha subido de nivel!");
+            this.nivel++;
+
+            int subirN;
+            subirN = (int) (Math.random() * 3 + 1);
+            System.out.println("Vitalidad + " + subirN);
+            this.setVitalidad(this.vitalidad + subirN);
+
+            subirN = (int) (Math.random() * 3 + 1);
+            System.out.println("Estamina + " + subirN);
+            this.setEstamina(this.estamina + subirN);
+
+            subirN = (int) (Math.random() * 4 + 1);
+            System.out.println("Ataque + " + subirN);
+            this.setAtaque(this.ataque + subirN);
+
+            subirN = (int) (Math.random() * 4 + 1);
+            System.out.println("Defensa + " + subirN);
+            this.setDefensa(this.defensa + subirN);
+
+            subirN = (int) (Math.random() * 4 + 1);
+            System.out.println("Ataque especial + " + subirN);
+            this.setAtaqueEspecial(this.ataqueEspecial + subirN);
+
+            subirN = (int) (Math.random() * 4 + 1);
+            System.out.println("Defensa especial + " + subirN);
+            this.setDefensaEspecial(this.defensaEspecial + subirN);
+
+            subirN = (int) (Math.random() * 4 + 1);
+            System.out.println("Velocidad + " + subirN);
+            this.setVelocidad(this.velocidad + subirN);
+
+        }
+        return true;
 
     }
 
