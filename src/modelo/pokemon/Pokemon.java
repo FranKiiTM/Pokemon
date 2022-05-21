@@ -164,31 +164,31 @@ public class Pokemon {
         if (experiencia >= nivel * 10) {
             nivel++;
 
-            vitalidad += aleatorio.nextInt(1, 5) + 1;
-            ataque += aleatorio.nextInt(1, 5) + 1;
-            defensa += aleatorio.nextInt(1, 5) + 1;
-            ataqueEspecial += aleatorio.nextInt(1, 5) + 1;
-            defensaEspecial += aleatorio.nextInt(1, 5) + 1;
-            velocidad += aleatorio.nextInt(1, 5) + 1;
+            vitalidad += aleatorio.nextInt(5) + 1;
+            ataque += aleatorio.nextInt(5) + 1;
+            defensa += aleatorio.nextInt(5) + 1;
+            ataqueEspecial += aleatorio.nextInt(5) + 1;
+            defensaEspecial += aleatorio.nextInt(5) + 1;
+            velocidad += aleatorio.nextInt(5) + 1;
         }
         return true;
 
     }
 
-    public float atacar(int ataque) { //TODO: Atacar a otro Pokémon
+    public float atacar(Pokemon atacarAPokemon, MovimientoAtaque m) { //TODO: Atacar a otro Pokémon
         //HP= HP-((Potencia)*(Ventaja) + A-D)
         float ventajaEficaz = 1.5f;
         int ventajaNeutro = 1;
         float ventajaPocoEficaz = 0.5f;
         int vitalidadNueva = 0;
         if (vitalidad > 0 && ventajaEficaz == 1.5f) {
-            vitalidadNueva =  (int) (vitalidad- (( MovimientoAtaque.getPotenciaAtaque() * 1.5)+ (ataqueEspecial - defensaEspecial)));
+            vitalidadNueva =  (int) (vitalidad- (( m.getPotenciaAtaque() * 1.5)+ (ataqueEspecial - defensaEspecial)));
         }else if(vitalidad > 0 && ventajaNeutro == 1) {
             vitalidadNueva = (int) (vitalidad
-                    - ((MovimientoAtaque.getPotenciaAtaque() * 1.5) + (ataqueEspecial - defensaEspecial)));
+                    - ((m.getPotenciaAtaque() * 1.5) + (ataqueEspecial - defensaEspecial)));
         }else if (vitalidad > 0 && ventajaPocoEficaz == 0.5f) {
             vitalidadNueva = (int) (vitalidad
-                    - ((MovimientoAtaque.getPotenciaAtaque() * 1.5) + (ataqueEspecial - defensaEspecial)));
+                    - ((m.getPotenciaAtaque() * 1.5) + (ataqueEspecial - defensaEspecial)));
         }
         return vitalidadNueva;
 

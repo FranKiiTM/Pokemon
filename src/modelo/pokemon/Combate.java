@@ -111,16 +111,11 @@ public class Combate {
         }
     }
 
-    public void retirarse(boolean retirada){
-        if(retirada == true){
+    public void retirarse( ){
             System.out.println("Te retiras de la batalla...");
             entrenadorRival = ganador;
             ganarPerderPokedollares();
         }
-        else if(retirada == false){
-            System.out.println("Sigue luchando");
-        }
-    }
 
     public void combatir(){
         int numTurno=1;
@@ -141,7 +136,7 @@ public class Combate {
         //TODO: Añadir mas tarde el metodo subir de nivel
         }
         else {
-            retirarse(true);
+            retirarse();
         }
     }
 }

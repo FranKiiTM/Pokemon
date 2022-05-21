@@ -14,7 +14,7 @@ public class Entrenador {
 
     public Entrenador(String nombre) {
         this.nombre = nombre;
-        this.pokedollares = aleatorio.nextInt(800, 1000) + 800;
+        this.pokedollares = aleatorio.nextInt(1000) + 800;
         this.equipo = new ArrayList<>(4);
         this.cajaPokemon = new ArrayList<>(10);
     }

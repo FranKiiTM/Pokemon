@@ -17,8 +17,6 @@ public class MovimientoAtaque extends Movimiento{
     public static int getPotenciaAtaque() {
         return potenciaAtaque;
     }
-    public void ataque(){
-        //TODO: preguntar vitalidad a paco
-    }
+    
     
 }

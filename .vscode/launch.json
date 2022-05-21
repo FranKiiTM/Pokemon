@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Pokemon_4dfe9abe"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Pokemon_4dfe9abe"
+        },
+        {
+            "type": "java",
             "name": "Launch Prueba",
             "request": "launch",
             "mainClass": "Prueba",
